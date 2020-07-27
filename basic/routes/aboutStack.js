@@ -3,13 +3,21 @@ import { createStackNavigator } from 'react-navigation-stack';
 // import Home from '../screens/home';
 // import ReviewDetails from '../screens/reviewDetails';
 import About from '../screens/about';
+import Header from '../shared/header';
+import React from 'react';
 
 const screens = {
     About: {
         screen: About,
-        navigationOptions: {
-            title: 'About GameZone',
-            // headerStyle:{ backgroundColor: '#061'}
+        // navigationOptions: {
+        //     title: 'About GameZone',
+        //     // headerTitle : () => <Header />,
+        //     // headerStyle:{ backgroundColor: '#061'}
+        // }
+        navigationOptions: ({ navigation }) => {
+            return {
+                headerTitle: () => <Header navigation={navigation} title ='About ZONE'/>,
+            }
         }
     },
     // ReviewDetails:{
